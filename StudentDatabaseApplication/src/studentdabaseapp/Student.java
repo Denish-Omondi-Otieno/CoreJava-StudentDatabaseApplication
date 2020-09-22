@@ -6,9 +6,14 @@ public class Student {
 	private String firstName;
 	private String lastName;
 	private int gradeYear;
-	private int studentID;
+	
+	//StudentID changed to string from int
+	private String studentID;
 	private int tuitionBalance;
-	private int costOfCourse;
+	private static int costOfCourse;
+	
+	// Static value belongs to the class and not the instance of the object
+	private static int id = 1000;
 	
 	// Constructor: Prompt user to enter students's name and year
 	public Student() {
@@ -22,10 +27,21 @@ public class Student {
 		System.out.println("1 - Freshmen\n2 - Sophmore\n3 - Junior\n4 - Senior\nEnter student class level: ");
 		this.gradeYear = in.nextInt();
 		
-		System.out.println(firstName + " "+ lastName + " " + gradeYear);
+		//Call the setStudentID();
+		setStudentID();
+		
+		// Print firstName, lastName, gradeYear and studentID.
+		System.out.println(firstName + " "+ lastName + " " + gradeYear + " " + studentID );
 	}
 	
 	// Generate an ID
+	private void setStudentID() {
+		//Grade level + ID
+		// Increment ID
+		id++;
+		// The little quotations make the entire function be a string
+		this.studentID = gradeYear + "" + id;
+	}
 	
 	// Enroll in courses
 	
