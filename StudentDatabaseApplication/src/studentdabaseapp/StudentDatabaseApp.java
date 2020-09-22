@@ -23,6 +23,9 @@ public class StudentDatabaseApp {
 		// Ask how many users we want to add
 		
 		// Create n number of new students
+		
+		// Create a student object to check if initializing the constructor works OK
+		Student stud1 = new Student();
 
 	}
 
