@@ -7,10 +7,17 @@ public class Student {
 	private String lastName;
 	private int gradeYear;
 	
+	// Addition of courses in to our properties list
+	private String courses = null;
+	
 	//StudentID changed to string from int
 	private String studentID;
-	private int tuitionBalance;
-	private static int costOfCourse;
+	
+	// Initialise tuitionBalance to zero
+	private int tuitionBalance = 0;
+	
+	// The cost of the course has to constant across the class hence static
+	private static int costOfCourse = 600;
 	
 	// Static value belongs to the class and not the instance of the object
 	private static int id = 1000;
@@ -44,6 +51,26 @@ public class Student {
 	}
 	
 	// Enroll in courses
+	public void enroll() {
+		//Get inside a loop, user hits 0
+		do {
+			System.out.println("Enter course to enroll (Q to quit): ");
+			Scanner in = new Scanner(System.in);
+			String course = in.nextLine();
+			// If course is not equal to quit then we store course into courses
+			if(!course.equals("Q")) { 
+				courses = courses + "\n" + course;
+				tuitionBalance = tuitionBalance + costOfCourse;
+			}
+			else {
+				System.out.println("BREAK!");
+				break;
+				}
+		} while (1 != 0);
+		
+		System.out.println("ENROLLED IN: " + courses);
+		System.out.println("TUITION BALANCE: " + tuitionBalance);
+	}
 	
 	// View balance
 	

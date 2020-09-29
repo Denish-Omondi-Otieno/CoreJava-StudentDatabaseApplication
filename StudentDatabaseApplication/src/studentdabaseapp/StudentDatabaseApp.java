@@ -26,6 +26,9 @@ public class StudentDatabaseApp {
 		
 		// Create a student object to check if initializing the constructor works OK
 		Student stud1 = new Student();
+		
+		// Check enroll()
+		stud1.enroll();
 
 	}
 
